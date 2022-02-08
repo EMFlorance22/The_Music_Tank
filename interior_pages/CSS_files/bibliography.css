@@ -1,0 +1,68 @@
+*{ margin: 0;
+    padding: 0;
+ }
+
+ .nav_menu {
+    float: right;
+    list-style: none;
+    margin-top: 30px;
+}
+
+ul li {
+    display: inline-block;
+}
+
+ul li a {
+    color: red;
+    text-decoration: blue;
+    padding: 20px 20px;
+    font-family: "Verdana", "sans-serif";
+    font-size: 19px;
+}
+
+ul li a:hover {
+    border: 1px solid grey;
+    background-color: white;
+}
+
+html {
+    background-color: grey;
+}
+
+p {
+    color: white;
+}
+
+header {
+    text-align: center;
+}
+a:hover {
+    color: lime;
+}
+
+.home {
+    text-align: center;
+    font-size: 30pt;
+}
+
+.logo {
+    font-family: cursive;
+    font-size: 14px;
+    margin-top: 200px;
+    padding-left: 15px;
+}
+
+img {
+    height: 60px;
+    width: 60px;
+    margin-top: 10px;
+    padding-left: 40px;
+}
+
+footer {
+    text-align: right;
+}
+
+ol li {
+    font-size: 20pt;
+}

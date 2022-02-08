@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <meta charset="UTF-8">
+
+    <title>Texas Music Input</title>
+
+    <link href="../CSS_files/texas_music_form.css" rel="stylesheet" type="text/css">
+
+<body>
+
+    <div class="top">
+
+        <ul>
+
+            <li> <a href="texas_music_map.html">TEXAS MUSIC MAP</a></li>
+
+            <li> <a href="texas_music_form.html">TEXAS MUSIC FORM</a></li>
+
+            <li> <a href="latin_music.html">LATIN MUSIC</a></li>
+
+            <li> <a href="popular_texas_music/popular_texas_music.html">POPULAR TEXAS MUSIC</a></li>
+
+            <li> <a href="about_us.html">ABOUT US</a></li>
+
+            <li> <a href="contact_us.html">CONTACT US</a></li>
+
+            <li> <a href="bibliography.html">BIBLIOGRPAHY</a></li>
+
+        </ul>
+
+    </div>
+
+    <br><header><h2>Texas Music Form</h2></header><br>
+
+    <p>If you would like to add a song to our music database, please fill out the form below with the song name, artist, and genre as well as any other information you want to enter!</p>
+
+    <p>Thanks in advance for helping us update our records to give users the most extensive experience of Texas music!</p><br>
+
+<form name="myForm" action="texas_music.php" method="POST" id="favorite">
+
+
+
+    <p>Select Song Genre: </p>
+
+
+
+    <select name="genre" size="1" id="genre">
+
+        <option value="alternative">Alternative</option>
+
+        <option value="blues">Blues</option>
+
+        <option value="country">Country</option>
+
+        <option value="electronic">Electronic</option>
+
+        <option value="hiphop">Hip-Hop/Rap</option>
+
+        <option value="indie">Indie</option>
+
+        <option value="jazz">Jazz</option>
+
+        <option value="latin">Latin</option>
+
+        <option value="pop">Pop</option>
+
+        <option value="r&b">R&B</option>
+
+        <option value="rock">Rock</option>
+
+        <option value="tejano">Tejano</option>
+
+    </select>
+
+    <br />
+
+
+
+    <p>Enter the genre of the song if it's not one of the options above:</p><input type="text" name="genre2" id="genre2" maxlength="20">
+
+    <p>Enter song:</p> <input type="text" name="song" id="song" maxlength = "40" required>
+
+    <p>Enter the year the song was released:</p> <input type="text" name="year" id="year">
+
+    <p>Enter song spotify link:</p> <input type="text" name="spotify" id="spotify" maxlength="200">
+
+    <p>Enter the name of the artist that released the song:</p> <input type="text" name="artist" id="artist" maxlength="30" required>
+
+    <p>Enter this artist's wikipedia page link:</p> <input type="text" name="wiki" id="wiki" maxlength="100">
+
+    <p>Enter this artist's hometown:</p> <input type="text" name="hometown" id="home" maxlength="40">
+
+    <input type="submit" name= "submit" value="Send"><input type="reset" value="Clear">
+
+</form>
+
+<div class = "home"><a href="../../music_tank_home.html">Back to Home Page</a></div>
+
+
+
+<h6 class="logo">The Drummer Boys</h6>
+
+<img src="../../1200px-Texas_flag_map.svg.png" alt = "Texas Flag"><br><br>
+
+    
+
+<footer>&copy; 2021 The Music Tank, Inc.</footer>
+
+<script>
+
+    var submit = document.getElementById("favorite").addEventListener("submit", validateForm);
+
+    function validateForm(event) {
+
+        let genreOption = document.getElementById("genre").value;
+
+        let unknownGenre = document.getElementById("genre2").value;
+
+        let artistName = document.getElementById("artist").value;
+
+        let song = document.getElementById("song").value;
+
+        let songYear = document.getElementById("year").value;
+
+        let artistWiki = document.getElementById("wiki").value;
+
+        let artistHometown = document.getElementById("home").value;
+
+        let songSpotify = document.getElementById("spotify").value;
+
+
+
+        if (genreOption == "" && unknownGenre == "") {
+
+            window.alert("Please pick a genre");
+
+            event.preventDefault();
+
+        }
+
+
+
+        else if (genreOption != "" && unknownGenre != "") {
+
+            window.alert("Please pick only one genre");
+
+            event.preventDefault();
+
+        }
+
+        let songMatch = /^[\w\s]+$/i;
+
+        if (songMatch.test(song) == false){
+
+            window.alert("Invalid song");
+
+            event.preventDefault();
+
+
+
+        }
+
+
+
+        let artistMatch = /^[\w\s]+$/i;
+
+        if (artistMatch.test(artistName) == false) {
+
+            window.alert("Invalid Artist");
+
+            event.preventDefault();
+
+        }
+
+
+
+        if (unknownGenre != "") {
+
+            let genreMatch = /^[a-zA-Z\s]+$/i;
+
+            let genrePass = genreMatch.test(unknownGenre);
+
+            // Make sure genre is a string of only letters (no numbers, special characters, case insensitive)
+
+
+
+            if (genrePass == false) {
+
+                window.alert("Invalid Genre");
+
+                event.preventDefault();
+
+            }
+
+        }
+
+
+
+        if (songYear != "") {
+
+            // Make sure song year is a string of four numbers (no letters or special characters)
+
+            let yearMatch1 = /^19[0-9][0-9]$/;
+
+            let yearMatch2 = /^20[0-1][0-9]$/;
+
+            let yearMatch3 = /^202[0-1]$/;
+
+            let yearPass = yearMatch1.test(songYear);
+
+            let yearPass2 = yearMatch2.test(songYear);
+
+            let yearPass3 = yearMatch3.test(songYear);
+
+
+
+            if (yearPass == false && yearPass2 == false && yearPass3 == false) {
+
+                window.alert("Invalid year");
+
+                event.preventDefault();
+
+            }
+
+
+
+        }
+
+
+
+        if (artistWiki != "") {
+
+            // Check that the wiki is a legitimate link to a wikipedia page
+
+            let wikiMatch = /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/;
+
+            let wikiPass = wikiMatch.test(artistWiki);
+
+
+
+            if (wikiPass == false) {
+
+                window.alert("Invalid Wiki Link");
+
+                event.preventDefault();
+
+            }
+
+        }
+
+
+
+        if (artistHometown != "") {
+
+            // Make sure hometown is also a string of only letters
+
+            let homeMatch = /^[a-zA-Z\s]+$/i;
+
+            let hometownPass = homeMatch.test(artistHometown);
+
+
+
+            if (hometownPass == false) {
+
+                window.alert("Invalid hometown");
+
+                event.preventDefault();
+
+            }
+
+        }
+
+
+
+        if (songSpotify != "") {
+
+            // Make sure songSpotify is a legitimate URL
+
+            let spotifyMatch = /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/;
+
+            let spotifyPass = spotifyMatch.test(songSpotify);
+
+
+
+            if (spotifyPass == false) {
+
+                window.alert("Invalid Spotify Link");
+
+                event.preventDefault();
+
+            }
+
+        }
+
+    
+
+    }
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <script type = "text/javascript" src = "./hash.js"></script>
+    <title>Register</title>
+    </head>
+    <body>
+        <p>Register below to enter your favorite music:</p> 
+        <form action="./addMusicUser.php" method="POST" id="login">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" minlength="3" maxlength = "15">
+
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password" minlength="6" maxlength="10">
+            <input type="submit" name="submit" value="Login" id="submit">
+        <!--Add encrypted password and username to database if username is not already there-->
+        <!--Then after that is added, set a session cookie of username and password that allows user to enter their favorite music-->
+        </form>
+        <footer><a href="../../../music_tank_home.html">Back to Home Page</a></footer>
+        <script>
+            var xhr;
+        
+            xhr = new XMLHttpRequest();
+            let submit = document.getElementById("submit").addEventListener("onclick", callServer());
+            
+            function callServer()
+            {
+                var username = document.getElementById("username").value;
+                
+                if (username == "" || username == null)
+                {
+                    return;
+                }
+        
+                var url ="texas_register.php";
+                var params = "username=" + username;
+                xhr.open("POST", url, true);
+            
+                xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        
+                xhr.setRequestHeader("Content-Type", "text/xml");
+                xhr.send(params);
+                xhr.onreadystatechange = function(){
+                    if (this.readyState == 4)
+                    {
+                        if (this.status == 200)
+                        {
+                            var response = xhr.responseText;
+        
+                            if (response >0 )
+                            {
+                                window.alert("That username is taken. Please try another");
+                                submit.preventDefault();
+                            }
+        
+                            else {
+                                hash();
+                            }
+        
+                }
+            }
+        }
+        
+        
+        }
+            function hash()
+            {
+                var password = document.getElementById("password").value;
+                var hash = Sha256.hash(password);
+                document.getElementById("password").value = hash;
+        
+            }
+        
+        
+        </script>
+    </body>
+    
+</html>

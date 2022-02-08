@@ -1,0 +1,169 @@
+*{ margin: 0;
+    padding: 0;
+ }
+
+ .nav_menu {
+    float: right;
+    list-style: none;
+    margin-top: 30px;
+}
+
+ul li {
+    display: inline-block;
+}
+
+ul li a {
+    color: red;
+    text-decoration: blue;
+    padding: 20px 20px;
+    font-family: "Verdana", "sans-serif";
+    font-size: 19px;
+}
+
+ul li a:hover {
+    border: 1px solid grey;
+    background-color: white;
+}
+
+html {
+    background-color: grey;
+}
+
+p {
+    color: white;
+}
+
+header {
+    text-align: center;
+}
+
+img#map {
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 475px;
+}
+
+a.place {
+    font-size: 6pt;
+}
+
+button {
+    display: block;
+    padding: 1px 20px;
+    background-color: tan;
+}
+
+a:hover {
+    color: lime;
+}
+
+#houston {
+    display: block;
+    position: absolute;
+    left: 900px;
+    top: 445px;
+}
+#austin {
+    display: block;
+    position: absolute;
+    left: 785px;
+    top: 420px;
+}
+#fort_worth {
+    display: block;
+    position: absolute;
+    left: 800px;
+    top: 280px;
+}
+#san_antonio {
+    display: block;
+    position: absolute;
+    left: 740px;
+    top: 455px;
+}
+#galveston {
+    display: block;
+    position: absolute;
+    left: 940px;
+    top: 470px;
+}
+#grapevine {
+    display: block;
+    position: absolute;
+    left: 830px;
+    top: 255px;
+}
+#angleton {
+    display: block;
+    position: absolute;
+    left: 875px;
+    top: 470px;
+
+}
+#la_grange {
+    display: block;
+    position: absolute;
+    left: 860px;
+    top: 427px;
+}
+#dallas {
+    display: block;
+    position: absolute;
+    left: 860px;
+    top: 280px;
+}
+#kingsville {
+    display: block;
+    position: absolute;
+    left: 820px;
+    top: 550px;
+}
+#beaumont {
+    display: block;
+    position: absolute;
+    left: 930px;
+    top: 420px;
+}
+#lubbock {
+    display: block;
+    position: absolute;
+    left: 660px;
+    top: 245px;
+}
+#el_paso {
+    display: block;
+    position: absolute;
+    left: 480px;
+    top: 340px;
+}
+#coriscana {
+    display: block;
+    position: absolute;
+    left: 880px;
+    top: 325px;
+}
+#waco {
+    display: block;
+    position: absolute;
+    left: 825px;
+    top: 350px;
+}
+
+#texarkana {
+    display: block;
+    position: absolute;
+    left: 930px;
+    top: 250px;
+}
+#mcallen {
+    display: block;
+    position: absolute;
+    left: 800px;
+    top: 620px;
+}
+
+footer {
+    text-align: right;
+    margin-top: 660px;
+}
