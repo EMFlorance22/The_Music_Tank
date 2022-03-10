@@ -1,6 +1,6 @@
 # The_Music_Tank
 
-# I and another UT Austin Nick Remelius created a completely interactive website that described everything you need to know about Texas music since the 1900s. 
+# I and another UT Austin student Nick Remelius created a completely interactive website that described everything you need to know about Texas music since the 1900s. 
 
 # The website implemented the following coding languages and technical implementations:
 
